@@ -1,13 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import "./styles/index.css";
+
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+import {addToCart} from './actions/cartActions';
+
+import { getCartSelector } from './selectors/cartSelectors';
+
+store.subscribe(() => {
+  console.log(store.getState())
+});
+
+
+// store.dispatch(addToCart({
+//   stock: 1000,
+//   description: 'test desc',
+//   price: 99.99,
+//   qty:2,
+//   size: 'S'
+//   }));
+// // store.dispatch(addToCart({
+// //     stock: 2000,
+// //     description: 'test desc',
+// //     price: 99.99,
+// //     qty:3,
+// //     size: 'L'
+// // }));
+// store.dispatch(addToCart({
+//   stock: 2000,
+//   description: 'test desc',
+//   price: 99.99,
+//   qty:2,
+//   size: 'L'
+// }));
+
+const state = store.getState();
+const getCart = getCartSelector(state.cart);
+
+console.log(getCart);
+
 ReactDOM.render(
-  <React.StrictMode>
+<React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>
+</React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

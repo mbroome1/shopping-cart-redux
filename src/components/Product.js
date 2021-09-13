@@ -1,5 +1,4 @@
 import React from 'react';
-import "./../styles/product.css";
 import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions/cartActions';

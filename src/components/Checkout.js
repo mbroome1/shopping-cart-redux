@@ -2,7 +2,6 @@ import React from 'react';
 import Total from './Total';
 import { connect } from 'react-redux';
 import { getCartCount } from '../selectors/cartSelectors';
-import './../styles/cart.css';
 
 function Checkout(props) {
 

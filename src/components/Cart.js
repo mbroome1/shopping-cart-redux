@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getCartCount } from '../selectors/cartSelectors';
 import { removeFromCart, incrementQty, decrementQty } from '../actions/cartActions';
-import './../styles/cart.css';
 
 function Cart(props) {
     const handleRemoveFromCart = function(e){

@@ -3,7 +3,9 @@
 .nav {
     /* background: rgb(18, 74, 158);
     background: rgb(66, 86, 116); */
-  background-color: rgb(228, 237, 240);
+    //background-color: rgb(229, 228, 240);
+    box-shadow: 0 0 2px 0 #ccc;
+
 
 }
 
@@ -38,7 +40,7 @@
 
 .nav__list__item {
     display: inline-block;
-    margin: 1rem 1rem;
+    margin: 1rem 2rem;
 }
 
 .nav__list__item--link {

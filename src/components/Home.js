@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <div>
           <div>
-            <h1>Home</h1>
+            {<h1>Home</h1>}
             <p>This app is a learning example of how to use React, React Router for navigating different pages and Redux state management for managing cart state globally.</p>
           </div>
 

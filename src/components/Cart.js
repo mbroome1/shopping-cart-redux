@@ -5,20 +5,20 @@ import { removeFromCart, incrementQty, decrementQty } from '../actions/cartActio
 
 function Cart(props) {
     const handleRemoveFromCart = function(e){
-        const id = e.target.parentElement.id;
+        const id = e.target.parentElement.parentElement.parentElement.id;
 
         if (id){
             props.dispatch(removeFromCart(id));
         }
     }
     const handleIncrementQty = function(e){
-        const id = e.target.parentElement.id;
+        const id = e.target.parentElement.parentElement.parentElement.id;
         if (id) {
             props.dispatch(incrementQty(id));
         }
     }
     const handleDecrementQty = function(e){
-        const id = e.target.parentElement.id;
+        const id = e.target.parentElement.parentElement.parentElement.id;
         if (id) {
             props.dispatch(decrementQty(id));
         }
@@ -27,23 +27,34 @@ function Cart(props) {
         <div>
             <h1>Cart</h1>
             {props.cartCount === 0 ? <p>You have nothing in your cart.</p> : <p className="cart-count">Items: {props.cartCount}</p>}
-            <ul>
             {
                 props.cart.map((item) => {
                     return (
-                        <li key={item.id} id={item.id}>
-                            <img src={item.image} alt="img" className="cart-img" />
-                            <span className="cart-stock">{item.stock}</span> <span className="cart-description">{item.description}</span> <span className="cart-size">{item.size}</span> <span className="cart-price">${item.price.toFixed(2)}</span>
-                            <button onClick={handleDecrementQty} disabled={item.qty<2}>-1</button>
-                            <span className="cart-qty">{item.qty}</span>
-                            <button onClick={handleIncrementQty}>+1</button>
-                            <button onClick={handleRemoveFromCart}>remove</button>
-                        </li>
+                        <div key={item.id} id={item.id} className="cart-item-container">
+                            <div className="cart-image-container">
+                                <img src={item.image} alt="img" className="cart-image" />
+                            </div>
+                            <div className="cart-body">
+                                <div className="cart-stock">{item.stock}</div> 
+                                <div className="cart-description">{item.description}</div> 
+                                <div className="cart-size">{item.size}</div> 
+                                <div className="cart-price">${item.price.toFixed(2)}</div>
+                                </div>
+                                <div className="cart-controls">
+                                    <div className="cart-controls-top">
+                                        <button className="cart-qty-button" onClick={handleDecrementQty} disabled={item.qty<2}>-1</button>
+                                        <span className="cart-qty">{item.qty}</span>
+                                        <button className="cart-qty-button" onClick={handleIncrementQty}>+1</button>
+                                    </div>
+                                    <div className="cart-controls-bottom">
+                                        <button className="cart-remove-button" onClick={handleRemoveFromCart}>remove</button>
+                                    </div>
+                            </div>
+
+                        </div>
                     )
                 })
             }
-
-            </ul>
         </div>
     )
 }

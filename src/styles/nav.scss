@@ -3,7 +3,7 @@
 .nav {
     /* background: rgb(18, 74, 158);
     background: rgb(66, 86, 116); */
-    //background-color: rgb(229, 228, 240);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 2px 0 #ccc;
 
 
@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     /* max-width: 106rem; */
-    margin: 0 auto;
+    margin-left: 1%;
     padding: 1rem;
 }
 
@@ -40,10 +40,10 @@
 
 .nav__list__item {
     display: inline-block;
-    margin: 1rem 2rem;
+    margin: 1rem 1.4rem;
 }
 
 .nav__list__item--link {
     /* color: white; */
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }

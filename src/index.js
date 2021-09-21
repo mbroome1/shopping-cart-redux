@@ -11,9 +11,9 @@ import {addToCart} from './actions/cartActions';
 
 import { getCartSelector } from './selectors/cartSelectors';
 
-store.subscribe(() => {
-  console.log(store.getState())
-});
+// store.subscribe(() => {
+//   // console.log(store.getState());
+// });
 
 
 // store.dispatch(addToCart({
@@ -38,10 +38,9 @@ store.subscribe(() => {
 //   size: 'L'
 // }));
 
-const state = store.getState();
-const getCart = getCartSelector(state.cart);
-
-console.log(getCart);
+// const state = store.getState();
+// const getCart = getCartSelector(state.cart);
+// console.log(getCart);
 
 ReactDOM.render(
 <React.StrictMode>

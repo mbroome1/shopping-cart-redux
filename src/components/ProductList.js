@@ -7,9 +7,11 @@ function ProductList(props) {
     
     return (
         <div className="product-list">
-        {
-           props.products.map((product)=> <Product key={product.stock} product={product} />)
-        }
+            <div className="grid">
+                {
+                    props.products.map((product)=> <Product key={product.stock} product={product} />)
+                }
+            </div>
         </div>
     )
 }

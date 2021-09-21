@@ -15,7 +15,7 @@ const defaultState = {
       },
       {
         stock: '3000',
-        description: 'Brown Belt',
+        description: 'Brown Leather Belt',
         price: 15.50,
         image: 'https://cdn.pixabay.com/photo/2015/09/23/03/07/menswear-952836_960_720.jpg'
       },

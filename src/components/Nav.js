@@ -7,18 +7,20 @@ const Nav = (props) => {
     return (
 
         <nav className="nav">
-            <div className="nav__container">
-                <div className="nav__logo">Redux Cart</div>
-                <div className="nav__right">
-                    <div className="nav__cart">Cart: {props.cartCount}</div>
-                    <ul clasname="nav__list">
-                        <li className="nav__list__item"><NavLink className="nav__list__item--link" to="/">Home</NavLink></li>
-                        {/*<li className="nav__list__item"><Link className="nav__list__item--link" to="/About">About</Link></li>*/}
-                        <li className="nav__list__item"><NavLink className="nav__list__item--link" to="/Catalogue">Catalogue</NavLink></li>
-                        <li className="nav__list__item"><NavLink className="nav__list__item--link" to="/Checkout">Checkout</NavLink></li>
-                    </ul>
+            <div className="container">
+                <div className="nav-container">
+                    <div className="nav-logo">Redux Cart</div>
+                    <div className="nav-middle">
+                        <div className="nav-cart">Cart: <span className="nav-cart-circle">{props.cartCount}</span></div>
+                    </div>
+                    <div className="nav-right">
+                        <ul clasname="nav-list">
+                            <li className="nav-list-item"><NavLink className="nav-list-item-link" to="/">Home</NavLink></li>
+                            <li className="nav-list-item"><NavLink className="nav-list-item-link" to="/Catalogue">Catalogue</NavLink></li>
+                            <li className="nav-list-item"><NavLink className="nav-list-item-link" to="/Checkout">Checkout</NavLink></li>
+                        </ul>
+                    </div>
                 </div>
-                
             </div>
 
         </nav>

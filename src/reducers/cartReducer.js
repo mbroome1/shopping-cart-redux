@@ -32,48 +32,47 @@ const defaultState = {
 const cartReducer = (state = defaultState, action) => {
   switch (action.type) {
         case 'ADD_TO_CART':
-            const cartIndex = state.cart.findIndex(item => item.stock === action.product.stock && item.size === action.product.size);
-            const newCart = cartIndex > -1 
-                            ? state.cart.map((item,index) => {
-                            if (index === cartIndex) {
-                                item.qty = item.qty + action.product.qty
-                            }
-                            return item
-                            }) 
-                            : state.cart.concat(action.product)
+          const cartIndex = state.cart.findIndex(item => item.stock === action.product.stock && item.size === action.product.size);
+          const newCart = cartIndex > -1 
+            ? state.cart.map((item,index) => {
+              if (index === cartIndex) {
+                  item.qty = item.qty + action.product.qty
+              }
+              return item
+              }) 
+            : state.cart.concat(action.product)
             return {
                 ...state,
                 cart: newCart
             }
-          case 'REMOVE_FROM_CART':
-            return {
-              ...state,
-                cart: state.cart.filter((item) => item.id !== action.id)
-
+        case 'REMOVE_FROM_CART':
+          return {
+            ...state,
+              cart: state.cart.filter((item) => item.id !== action.id)
             }
-          case 'INCREMENT_QTY':
-             const newCartWithIncrement = state.cart.map((item)=> {
-              if (item.id === action.id) {
-                item.qty = (item.qty + 1)
-              }
-              return item
-            })
-
-            return {
-              ...state,
-              cart: newCartWithIncrement
+        case 'INCREMENT_QTY':
+            const newCartWithIncrement = state.cart.map((item)=> {
+            if (item.id === action.id) {
+              item.qty = (item.qty + 1)
             }
-          case 'DECREMENT_QTY':
-              const newCartWithDecrement = state.cart.map((item)=> {
-                if (item.id === action.id && item.qty>1) {
-                  item.qty = (item.qty - 1)
-                }
-                return item
-              })
-              return {
-                ...state,
-                cart: newCartWithDecrement
-              }
+            return item
+          })
+
+          return {
+            ...state,
+            cart: newCartWithIncrement
+          }
+        case 'DECREMENT_QTY':
+          const newCartWithDecrement = state.cart.map((item)=> {
+            if (item.id === action.id && item.qty>1) {
+              item.qty = (item.qty - 1)
+            }
+            return item
+          })
+          return {
+            ...state,
+            cart: newCartWithDecrement
+          }
         default:
           return state
     }

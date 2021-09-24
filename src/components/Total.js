@@ -4,7 +4,7 @@ import { getCartTotal } from '../selectors/cartSelectors'
 
  function Total(props) {
     return (
-        <div>
+        <div className="total-container">
             <h2>Total: ${props.cartTotal}</h2>
         </div>
     )

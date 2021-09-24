@@ -23,13 +23,16 @@ function Product(props) {
     return (
         <div className="col">
             <div className="product">
-                <h2 className="product-stock">{props.product.stock}</h2>
-                <div className="product-image-container">
-                    <img className="product-image" src={props.product.image} alt='pic'/>
+            <div className="product-image-container">
+                <img className="product-image" src={props.product.image} alt='pic'/>
+            </div>
+            <div className="product-body">
+                <p className="product-description">{props.product.description}</p>
+                <div className="product-stock-and-price-container">
+                    <div className="product-stock">{props.product.stock}</div>
+                    <div className="product-price">${props.product.price.toFixed(2)}</div>
                 </div>
-                <div className="product-body">
-                    <p className="product-description">{props.product.description}</p>
-                    <p className="product-price">${props.product.price.toFixed(2)}</p>
+
                     <form onSubmit={handleAddToCart}>
                         <div className="select-group">
                             <label htmlFor="size" className="product-label">Size:</label>

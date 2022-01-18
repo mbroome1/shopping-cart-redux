@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     max-width: 500px;
     min-width: 280px;
 }
@@ -86,6 +88,16 @@
     font-size: 2.5rem;
     color: #333;
     font-weight: 500;
+}
+
+.cart-qty-button {
+    font-size: 1.4rem;
+    padding: 0.2rem;
+}
+
+.cart-times {
+    display:inline-block;
+    font-size: 1.6rem;
 }
 
 .line {

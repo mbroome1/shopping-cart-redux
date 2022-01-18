@@ -6,7 +6,7 @@ import Total from './Total';
 export default function Catalogue(props) {
     return (
         <div>
-            <h1>Catalogue</h1>
+            <h1>Products</h1>
             <ProductList />
             <Cart />
             <Total />

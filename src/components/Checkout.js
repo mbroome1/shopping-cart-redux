@@ -24,7 +24,7 @@ function Checkout(props) {
                                 <div className="cart-price">${item.price.toFixed(2)}</div>
                             </div>
                             <div className="cart-controls">
-                                <div className="cart-qty">x{item.qty}</div>
+                                <div className="cart-qty"><span class="cart-times">x</span> {item.qty}</div>
                             </div>
                        </div>
 
